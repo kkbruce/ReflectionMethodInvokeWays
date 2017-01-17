@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -55,7 +56,7 @@ namespace ReflectionMethodInvokeWays
         /// Way6： 建立 expresion 並進行方法呼叫。
         /// </summary>
         /// <param name="targetObject">The target object.</param>
-        internal void Way6_CreateExpresionCall(object targetObject)
+        internal void Way6_CreateExpressionCall(object targetObject)
         {
             var baseName = MethodBase.GetCurrentMethod().Name;
             var thisObject = Expression.Constant(targetObject);
@@ -165,6 +166,7 @@ namespace ReflectionMethodInvokeWays
             PrintResult(baseName, fooResult, barResult);
         }
 
+        [Conditional("DEBUG")]
         private void PrintResult(string baseName, string foo, string bar)
         {
             Console.WriteLine($"{baseName}: {foo}, {bar}");
