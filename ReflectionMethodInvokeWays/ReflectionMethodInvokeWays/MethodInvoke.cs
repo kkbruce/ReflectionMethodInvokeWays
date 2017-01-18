@@ -12,7 +12,7 @@ namespace ReflectionMethodInvokeWays
         /// Way7： 使用 Reflection.Emit.DynamicMethod 動態產生 IL 並透過 CreateDelegate 建立 Func 委派執行方法。
         /// </summary>
         /// <param name="targetObject">The target object.</param>
-        internal void Way7_UsingDynamicMethodCall(object targetObject)
+        internal void Way7_EmitAPIDynamicMethod(object targetObject)
         {
             var baseName = MethodBase.GetCurrentMethod().Name;
             var type = targetObject.GetType();
@@ -53,7 +53,7 @@ namespace ReflectionMethodInvokeWays
         }
 
         /// <summary>
-        /// Way6： 建立 expresion 並進行方法呼叫。
+        /// Way6： 建立 Expression 並進行方法呼叫。
         /// </summary>
         /// <param name="targetObject">The target object.</param>
         internal void Way6_CreateExpressionCall(object targetObject)
@@ -119,7 +119,7 @@ namespace ReflectionMethodInvokeWays
         /// Way3：使用純反射(反映)的 Methoid.Invoke 進行方法呼叫
         /// </summary>
         /// <param name="targetObject">The target object.</param>
-        internal void Way3_UsingMethodInvoke(object targetObject)
+        internal void Way3_RelectionAPIMethodInvoke(object targetObject)
         {
             var baseName = MethodBase.GetCurrentMethod().Name;
 
@@ -138,7 +138,7 @@ namespace ReflectionMethodInvokeWays
         /// Way2：建立 lambda 並進行方法呼叫。
         /// </summary>
         /// <param name="targetObject">The target object.</param>
-        internal void Way2_CreateALambdaCall(object targetObject)
+        internal void Way2_CreateLambdaCall(object targetObject)
         {
             var baseName = MethodBase.GetCurrentMethod().Name;
 

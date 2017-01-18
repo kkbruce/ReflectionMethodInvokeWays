@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 
 namespace ReflectionMethodInvokeWays
 {
@@ -16,10 +11,10 @@ namespace ReflectionMethodInvokeWays
         public void Way1() => _mi.Way1_DirectMethodCall(_myClass);
 
         [Benchmark]
-        public void Way2() => _mi.Way2_CreateALambdaCall(_myClass);
+        public void Way2() => _mi.Way2_CreateLambdaCall(_myClass);
 
         [Benchmark]
-        public void Way3() => _mi.Way3_UsingMethodInvoke(_myClass);
+        public void Way3() => _mi.Way3_RelectionAPIMethodInvoke(_myClass);
 
         [Benchmark]
         public void Way4() => _mi.Way4_Using_dynamic_Keyword(_myClass);
@@ -31,7 +26,6 @@ namespace ReflectionMethodInvokeWays
         public void Way6() => _mi.Way6_CreateExpressionCall(_myClass);
 
         [Benchmark]
-        public void Way7() => _mi.Way7_UsingDynamicMethodCall(_myClass);
-
+        public void Way7() => _mi.Way7_EmitAPIDynamicMethod(_myClass);
     }
 }
